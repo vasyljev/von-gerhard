@@ -1,0 +1,18 @@
+<article class="vet-list-item">
+  <button class="delete-item-button" 
+          (click)="deleteItem(vetProductsItem, vetProductsItem.type)" 
+          *ngIf="loginStatus"></button>
+  <div class="vet-product-img-container">
+      <img [src]="vetProductsItem?.imageURL ? vetProductsItem?.imageURL : '/assets/images/image-not-found.jpg'" alt="Item image">
+      <div class="price-block">
+        <p><b>Ціна:</b> {{vetProductsItem?.price}} грн.</p>
+      </div>
+  </div>  
+  <div class="vet-list-item-text">
+    <h2>{{vetProductsItem?.name}}</h2>
+  </div>
+  <div class="vet-list-buttons-block"> 
+    <a [routerLink]="'/full-info/' + vetProductsItem.id"><button>Детальний опис</button></a> 
+    <button (click)="addOrDeletePRoductFromBasket(vetProductsItem)">{{basketStatus ? 'Видалити з кошика' : 'Додати в кошик'}}</button>
+  </div>
+</article>

@@ -1,0 +1,100 @@
+<section class="vet-basket">
+  <header id="vet-basket-header" class="vet-products-header">
+    <h1>VITALIC VET</h1>
+    <h2>Кошик</h2>
+  </header>  
+  <div class="basket-container">
+    <div class="order-form">
+      <h3>Для здійсненя замовлення заповніть всі поля</h3>
+      <form #basketForm="ngForm" class="order-form-block">
+        <label>
+          Ім'я: 
+          <input type="text" 
+                name="userFirstName"
+                id="user-first-name"
+                [ngModel]="userFirstName"
+                #firstName="ngModel"
+                required autocomplete="off"
+                placeholder="Введіть своє ім'я">
+        </label>
+        <label>
+            Прізвище: 
+            <input type="text"
+                  name="userLastName"
+                  id="user-last-name"
+                  [ngModel]="userLastName"
+                  #lastName="ngModel"
+                  required autocomplete="off"
+                  placeholder="Введіть своє прізвище">
+        </label>
+        <label>
+          Номер телефону: 
+          <input type="text"
+                name="userPhoneNumber"
+                id="user-phone-number"
+                [ngModel]="userPhoneNumber"
+                #phoneNumber="ngModel"
+                pattern="[+]{1}[0-9]{12}" 
+                equired placeholder="+380671111111">
+        </label>
+        <label>
+          Електронна поштова адреса: 
+          <input type="email"
+                name="userEmail"
+                id="user-email"
+                [ngModel]="userEmail"
+                #email="ngModel"
+                required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+                autocomplete="off"
+                placeholder="Введіть адресу своєї електронної пошти">        
+        </label>
+        <label>
+          Відділення Нової Пошти: 
+          <textarea name="userNovaPoshta"
+                    id="user-nova-poshta"
+                    [ngModel]="userNovaPoshta"
+                    #novaPoshta="ngModel"
+                    required placeholder="Введіть місто, в якому Ви проживаєте, та номер відділення Нової Пошти або інший спосіб доставки"></textarea>
+        </label>
+      </form>
+    </div>
+    <ul class="basket-list">
+      <li><h3>Перелік замовлень</h3></li>
+      <li *ngFor="let item of basketList">
+        <div class="basket-list-item">
+          <div class="left-side-item">
+            <button class="delete-basket-button" (click)="deleteItemFromBasket(item)"></button>
+          </div>
+          <div class="right-side-item">
+            <div class="top-side-item">
+              <img [src]="item?.imageURL ? item?.imageURL : '/assets/images/image-not-found.jpg'" alt="Item image">
+              <p>{{item.name}}</p>
+            </div>
+            <div class="bottom-side-item">
+              <div class="product-count-block">
+                <p>Кількість</p>
+                <input type="text" class="product-count-input" [value]="item.count" (change)="chengeItemCount(item.id, itemCount.value)" #itemCount>
+              </div>
+              <p>{{item.price * item.count}} грн.</p>                
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <h3>Загальна сума: {{orderSum}} грн.</h3>
+  <button [disabled]="firstName.invalid || lastName.invalid || phoneNumber.invalid || email.invalid || novaPoshta.invalid || (basketList.length == 0)" 
+          id="make-order-button" 
+          (click)="makeOrder(firstName.value, lastName.value, phoneNumber.value, email.value, novaPoshta.value); basketForm.reset()">
+    Зробити замовлення
+  </button>
+</section>
+<div class="modal-window-wrap" *ngIf="modalWindowVis">
+  <div class="modal-window">
+    <div class="modal-window-text-block">
+      <p>Дякую за замовлення!</p>
+      <p>Найближчим часом з Вами зв'яжуться!</p>
+    </div>
+    <button (click)="closeModalWindow()" class="modal-window-close-btn">Закрити</button>
+  </div>
+</div>

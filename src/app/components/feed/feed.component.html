@@ -1,0 +1,16 @@
+<section id="vet-feed">
+  <header id="vet-feed-header" class="vet-products-header">
+    <h1>VITALIC VET</h1>
+    <h2>Якісні корми з Європи для Ваших улюбленців!</h2>
+  </header>
+  <app-admin-add-edit-products></app-admin-add-edit-products>
+  <app-search [searchType]="'feed'"></app-search>
+  <section class="vet-products-list">
+    <h3>Перелік достуних кормів</h3>
+    <ul class="vet-container">
+      <li *ngFor="let item of feedItems">
+        <app-list-item [vetProductsItem]="item" ></app-list-item>
+      </li>
+    </ul> 
+  </section>
+</section>

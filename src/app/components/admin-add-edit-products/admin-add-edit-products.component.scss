@@ -1,0 +1,144 @@
+.vet-admin-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vet-admin-panel-wrap {
+    width: 700px;
+    height: 300px;
+    padding: 20px 20px 30px 20px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.vet-admin-panel {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    input {
+        width: 180px;
+        height: 30px;
+        border-radius: 5px;
+        border: 0 transparent;
+        padding: 5px;
+        margin: 5px;
+    }
+}
+
+.vet-admin-input-block {
+    width: 300px;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.product-type-label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin: 5px;
+    select {
+        cursor: pointer;
+        height: 30px;
+        border-radius: 5px;
+        border: 0 transparent;
+        padding: 5px;
+    }
+}
+
+.product-img-label {
+    display: block;
+    input {
+        display: none;
+    }
+}
+
+.admin-panel-button {
+    width: 180px;
+    min-height: 30px;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    background-color: #5e6073;
+    color: white;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    border: 0 transparent;
+    transition: box-shadow 0.5s ease;
+    &:hover {
+        box-shadow: 0 0 10px 5px rgba(255,255,255, 1);
+    }
+}
+
+textarea {
+    width: 400px;
+    height: 150px;
+    border-radius: 5px;
+    border: 0 transparent;
+    padding: 5px;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+    // font-size: 16px;
+}
+
+.panel-open-close-btn {
+    width: 300px;
+    height: 30px;
+    background-color: gainsboro;
+    border: 0px solid transparent;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.admin-close-button {
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+    align-self: flex-end;
+    background-color: transparent;
+    border: 0px transparent;
+    background-image: url('/assets/images/close-button-image.svg');
+    background-size: contain;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    &:hover {
+        opacity: 1;        
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .vet-admin-panel-wrap {
+        width: 95vw;
+        height: 90vh;
+        padding: 10px 10px 20px 10px;
+    }
+    .vet-admin-panel {
+        height: 100%;
+        margin-top: 30px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .vet-admin-input-block {
+        width: 80vw;
+    }
+    textarea {
+        width: 80vw;
+    }
+}

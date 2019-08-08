@@ -1,0 +1,16 @@
+<section id="vet-meds">
+  <header id="vet-meds-header" class="vet-products-header">
+    <h1>Von GerHard</h1>
+    <h2>Якісні препарати з Європи для Ваших улюбленців!</h2>
+  </header>
+  <app-admin-add-edit-products></app-admin-add-edit-products>
+  <app-search [searchType]="'meds'"></app-search>
+  <section class="vet-products-list">
+    <h3>Перелік достуних препаратів</h3>
+    <ul class="vet-container">
+      <li *ngFor="let item of medsItems">
+        <app-list-item [vetProductsItem]="item" ></app-list-item>
+      </li>
+    </ul> 
+  </section>
+</section>

@@ -1,0 +1,229 @@
+
+#main-navbar {
+    width: 100%;
+    min-height: 50px;
+    background-color: rgba(242, 244, 209, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    padding: 0 25px; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000000;
+    transition: all 0.5s ease;
+    &:hover {
+        background-color: rgba(242, 244, 209, 1);
+    }
+}
+
+#main-nav-list {
+    width: 70vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    li, a {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        color: #89a3b2;
+        transition: 0.5s ease;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+            color: #5e6073;            
+        }
+
+    }
+}
+
+.logo-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    h3 {
+        font-family: 'K2D', 'Montserrat Alternates', sans-serif;
+        color: #5e6073;            
+    }
+}
+
+#main-logo-img {
+    width: 70px;
+}
+
+.hide-nav-bar {
+    transform: translate3d(0, -100px, 0);
+}
+
+.show-nav-bar {
+    transform: translate3d(0, 0, 0);
+}
+
+.basket-wrap {
+    width: 25px;
+    min-height: 20px;
+    cursor: pointer;
+    opacity: 0.5;
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s ease;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.basket-count-block {
+    width: 15px;
+    height: 15px;
+    background-color: yellow;
+    color: black;
+    border-radius: 50px;
+    position: absolute;
+    right: -5px;
+    bottom: -5px;
+    z-index: 2;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.login-button {
+    width: 20px;
+    min-height: 20px;
+    background-color: transparent;
+    border: 0px transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.invisible {
+    visibility: hidden;
+    display: none !important;
+}
+
+#nav-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-end;
+    img {
+        width: 40px;
+    }
+}
+
+#burger-menu-button {
+    display: none;
+    text-align: right;
+    img {
+        width: 40px;
+    }
+}
+
+#small-nav-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000000;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to right,rgba(242, 244, 209, 0.9)0%, rgba(242, 244, 209, 1)50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    li {
+        padding-bottom: 20px;
+    }
+    li, a {
+        font-size: 5vw;
+        cursor: pointer;
+        color: #5e6073;
+        text-decoration: none;
+        font-family: 'K2D', 'Montserrat Alternates', sans-serif;
+        transition: color 0.5s ease;
+        &:hover {
+            color: #383944;
+        }
+    }
+    transition: transform 0.5s ease;
+}
+.hide-nav {    
+    transform: translate3d(-700px, 0px, 0px);
+}
+
+.show-nav {
+    transform: translate3d(0px, 0px, 0px);
+}
+
+#nav-basket-li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#nav-basket-wrap {
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+    img {
+        width: 25px;
+    }
+}
+
+.burger-login-button {
+    margin-left: 5px;
+}
+
+#close-menu-button {
+    align-self: flex-end;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    background-image: url('/assets/images/close-menu-img.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 880px) {
+    #main-navbar {
+        padding: 0 10px; 
+    }
+    #main-nav-list {
+        width: 80vw;
+        li, a {
+            font-size: 2.5vw;    
+        }
+    }
+    #main-logo-img {
+        width: 8vw;
+    }
+    .logo-wrap {
+        width: 15vw;
+        h3 {
+           font-size: 2vw;     
+        }
+    }
+    .login-button {
+        width: 5vw;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #main-nav-list {
+        display: none;
+    }
+    #nav-burger {
+        display: flex;
+    }
+    #burger-menu-button {
+        display: block;
+    }
+}

@@ -1,0 +1,16 @@
+<header id="vet-order-header" class="vet-products-header">
+  <h1>VITALIC VET</h1>
+  <h2>Перелік здійснених замовлень</h2>
+</header>
+<section class="vet-orders">
+   <ul class="vet-orders-lest">
+     <li class="orders-list-item" *ngFor="let item of orderList">
+       <div class="order-delete-btn" (click)="deleteOrder(item)">
+         <img src="/assets/images/delete-basket-image.svg" alt="Delete button">
+       </div>
+       <div class="order-info-block">
+         <p>{{item?.orderInfo}}</p>
+       </div>
+     </li>
+   </ul>
+</section>

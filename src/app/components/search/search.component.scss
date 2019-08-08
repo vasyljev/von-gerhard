@@ -1,0 +1,64 @@
+.vet-product-search {
+    padding: 10px;
+    padding-left: 40px;
+    width: 100%;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #4e5270;
+
+}
+
+.product-search-form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.product-search-input {
+    width: 200px;
+    height: 27px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.checkbox-block {
+    padding-left: 20px;
+    label {
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 690px) {
+    .vet-product-search {
+        padding: 5px;
+        padding-left: 5px;
+        font-size: 16px;
+    }
+    .checkbox-block {
+        padding-left: 3px;
+        label {
+            padding: 5px;
+        }
+    }
+    .product-search-input {
+        width: 20vw;
+        height: 20px;
+        padding: 5px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 435px) {
+    .product-search-form {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        label {
+            padding: 5px;
+        }
+    }
+    .product-search-input {
+        width: 50vw;
+    }
+}

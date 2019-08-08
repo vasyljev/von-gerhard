@@ -1,0 +1,376 @@
+#vet-home-header {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255,0.6);
+    }
+    h1, h2 {
+        color: #5e6073;
+        font-family: 'K2D', 'Montserrat Alternates', sans-serif;
+        text-shadow: 0 0 10px rgba(255,255,255,0.8);
+
+    }
+    h1 {
+        font-size: 60px;
+        font-weight: 600;
+    }
+    h2 {
+        font-size: 40px;
+    }
+}
+
+#vet-home-slider {
+   height: 100vh;
+   width: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 0;
+}
+
+.vet-home-slide {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; 
+    opacity: 0;
+    transition: all 2s ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.vet-home-slide-1 {
+    background-image: url('/assets/images/vet-slider-111.jpg');
+    z-index: 2;
+}
+
+.vet-home-slide-2 {
+    background-image: url('/assets/images/vet-slider-2.jpg');
+    z-index: 1;
+}
+
+.vet-home-slide-3 {
+    background-image: url('/assets/images/vet-slider-3.jpg');
+    z-index: 0;
+}
+
+.slide-1-visible {
+    opacity: 1;
+}
+
+.slide-2-visible {
+    opacity: 1;
+}
+
+.slide-3-visible {
+    opacity: 1;
+}
+
+#vet-home-header-text {
+    text-align: center;
+    position: relative;
+    z-index: 100;
+    margin-top: 100px;
+}
+
+#vet-home-mouse {
+    width: 50px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 100;
+    animation: mouse-anim 3s infinite;
+}
+
+#vet-home-products {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgba(242, 244, 209, 1);
+    position: relative;
+    h2 {
+        
+        width: 350px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #393b49;
+        font-weight: 800;
+        // border: 2px solid #30313d;
+        font-family: 'Montserrat Alternates', sans-serif;
+        font-size: 40px;
+        
+    }
+}
+
+.vet-home-products-h {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: rgba(255,255,255,0.3);
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3)70%, rgba(255,255,255,0));
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#vet-home-products-links {    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vet-home-product-item {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.7s ease-in-out;
+    background-position: center center;
+    &:hover {
+        width: 70%;       
+    }
+}
+
+#meds-link {
+    background-image: url('/assets/images/vet-meds-img.jpg');
+}
+
+#feed-link {
+    background-image: url('/assets/images/vet-feed-img1.jpg');
+}
+
+#ammo-link {
+    background-image: url('/assets/images/vet-ammo-img1.jpg');
+}
+
+.product-name {
+    width: 70%;
+    height: 50%;
+    background-color: rgba(255,255,255,0.7);
+    color: #2b2d38;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 30px;
+    h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        height: 70%;
+        border: 2px solid #5e6073;       
+    }
+}
+
+
+#vet-home-about-us {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color: rgba(242, 244, 209, 1);
+
+    h2 {
+        color: #5e6073;
+        font-size: 40px;
+        font-weight: 800;
+        margin: 40px 0px;
+    }
+}
+
+.about-us-info-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+}
+
+.about-us-half {
+    padding: 10px 30px;
+    font-size: 30px;
+    // mix-blend-mode:
+}
+
+.about-us-list {
+    width: 65%;
+    li {
+        background-image: url('/assets/images/logo_only.png');
+        background-size: 30px;
+        background-repeat: no-repeat;
+        padding-left: 37px;
+        margin-bottom: 25px;
+        font-size: 30px;
+    }
+}
+
+.about-us-contacts {
+    width: 35%;
+    h3 {
+        color: #5e6073;
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: 23px;
+        margin-bottom: 10px;
+    }
+}
+
+.about-us-to-products-btn {
+    width: 90%;
+    height: 200px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/assets/images/vet-feed-img1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left bottom;
+    font-size: 9vw;
+    font-weight: 900;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}
+
+@keyframes mouse-anim {
+    0% {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .about-us-info-block {
+        p {
+            font-size: 20px;
+        }
+    }
+    .about-us-half {
+        padding: 10px 10px;
+    }
+    .about-us-list {
+        width: 60%;
+    }
+    
+    .about-us-contacts {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    #vet-home-products {
+        h2 {
+            font-size: 30px;            
+        }
+    }
+    .vet-home-products-h {
+        width: 100%;
+        height: 50px;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    #vet-home-products-links {    
+       flex-direction: column;
+    }
+    .vet-home-product-item {
+        width: 100%;
+        height: 30vh;
+        &:hover {
+            width: 100%;
+            height: 50vh;       
+        }
+    }
+   
+}
+
+@media only screen and (max-width: 820px) {
+    .vet-home-slide {
+        background-position: center center;
+    }
+    .about-us-to-products-btn {
+        font-size: 8vw;
+        // margin-top: 0px;
+    }
+    .about-us-info-block {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        li, p {
+            font-size: 25px;
+        }
+    }
+    .about-us-list {
+        padding: 5px 20px;
+        width: 100%;
+        li {
+            margin-bottom: 15px;
+        }
+    }
+    
+    .about-us-contacts {
+        width: 100%;
+        h3 {
+            font-size: 35px;
+        }
+    }
+    #vet-home-about-us {
+        h2 {            
+            font-size: 35px;
+            margin: 20px 0px;
+        }
+    }
+    .about-us-half {
+        padding: 5px 20px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .about-us-info-block {
+        li, p {
+            font-size: 18px;
+        }
+    }
+    .about-us-info-block {
+        p {
+            font-size: 16px;
+        }
+    }
+}

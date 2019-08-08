@@ -1,0 +1,22 @@
+<section  id="login-form-wrap" [ngClass]="{'invisible': visabilityValue}">
+  <div id="login-form-container">
+    <button id="login-close-button" (click)="onCloseLoginForm()"></button>
+    <h2>Введіть дані для активації режиму адміністрування</h2>
+    <form #myLoginForm="ngForm" 
+          id="login-form" 
+          (submit)="login(email.value, password.value, myLoginForm)">
+      <div id="login-input-block">
+        <div class="login-container">
+            <label for="admin-email">E-Mail: </label>
+            <label for="admin-password">Password: </label>
+        </div>
+        <div class="login-container">
+          <input type="email" name="admin-email" id="admin-email" #email [ngModel]="emailAdmin" value=" ">
+          <input type="password" name="admin-password" id="admin-password" #password [ngModel]="passwordAdmin" value=" ">
+        </div>
+      </div>
+      <button id="submit-button" type="submit">Вхід</button>
+    </form>
+
+  </div>
+</section>

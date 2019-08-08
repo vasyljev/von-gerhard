@@ -1,0 +1,13 @@
+<section class="vet-product-search">
+  <form  class="product-search-form" [formGroup]="searchForm">
+    <label>
+      Пошук: 
+      <input formControlName="productSearchControl" type="text" class="product-search-input">
+    </label>
+    <div class="checkbox-block">
+      <label>Для собак: <input formControlName="dogCheckboxControl" type="checkbox" (click)="iniziateChackbox('dog')" checked ></label>
+      <label>Для котів: <input formControlName="catCheckboxControl" type="checkbox" (click)="iniziateChackbox('cat')" checked></label>
+
+    </div>
+  </form>
+</section>

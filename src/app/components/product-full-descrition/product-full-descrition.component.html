@@ -1,0 +1,22 @@
+<section class="product-full-wrap">
+  <h1>{{product?.name}}</h1>
+  <div class="product-container">
+    <div class="product-full-info">
+      <div class="product-image-block">
+        <img [src]="product?.imageURL" alt="Product image" class="product-full-image">
+        <div class="product-full-button-block">
+          <button (click)="goBack()">Назад</button>
+          <button (click)="addOrDeleteProductFromBasket(product)">{{basketStatus ? 'Видалити з кошика' : 'Додати в кошик'}}</button>      
+        </div>
+      </div>
+      <div class="product-full-main-info">
+        <p class="price-value"><b>Ціна:</b> {{product?.price}} грн.</p>
+        <p class="product-description"><b>Опис:</b> {{product?.description}}</p>
+      </div>
+    </div>
+    
+  </div>
+  
+</section>
+
+

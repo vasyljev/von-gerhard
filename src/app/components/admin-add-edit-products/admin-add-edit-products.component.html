@@ -1,0 +1,36 @@
+<button class="admin-panel-button" *ngIf="adminModeValue" [ngClass]="{'invisible': visabilityValue}" (click)="openOrCloseLoginForm()">Додати об'єкт</button>
+<section class="vet-admin-section" *ngIf="adminModeValue" [ngClass]="{'invisible': !visabilityValue}">
+  <div class="vet-admin-panel-wrap">
+    <button class="admin-close-button" (click)="openOrCloseLoginForm()"></button>
+    <form #myForm="ngForm" class="vet-admin-panel" 
+          (submit)="uploadProduct(type.value, name.value, price.value, description.value, animal.value, file.files[0]);
+                    myForm.reset()">
+      <div class="vet-admin-input-block">
+        <label class="product-type-label">
+          Тип:  
+          <select name="productType" class="product-type-select" #type>
+            <option value="meds">Ветпрепарати</option>
+            <option value="feed">Корм</option>
+            <option value="ammo">Амуніція</option>
+          </select>
+        </label>
+        <label class="product-type-label">
+          Для кого:  
+          <select name="animalType" class="product-type-select" #animal>
+            <option value="dog">Для собак</option>
+            <option value="cat">Для котів</option>
+          </select>
+        </label>
+        <input type="text" name="productName" placeholder="Назва" #name [ngModel]="productName">
+        <input type="text" name="productPrice" placeholder="Ціна" #price [ngModel]="productPrice">
+        <label class="product-img-label admin-panel-button">
+            {{file.value ? file.files[0].name : 'Завантажити зображення'}}          
+          <input type="file" name="productImage" required #file [(ngModel)]="productImage">          
+        </label>
+      </div>
+      <textarea name="productDescription" placeholder="Детальний опис продукту" #description [ngModel]="productDescription"></textarea>
+      <button class="admin-panel-button" type="submit">Завантажити</button>
+    </form>
+  </div>  
+</section>
+

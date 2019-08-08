@@ -1,0 +1,16 @@
+<section id="vet-ammo">
+  <header id="vet-ammo-header" class="vet-products-header">
+    <h1>VITALIC VET</h1>
+    <h2>Якісна амуніція з Європи для Ваших улюбленців!</h2>
+  </header>
+  <app-admin-add-edit-products></app-admin-add-edit-products>
+  <app-search [searchType]="'ammo'"></app-search>
+  <section class="vet-products-list">
+    <h3>Перелік достуної амуніції</h3>
+      <ul class="vet-container">
+        <li *ngFor="let item of ammoItems">
+          <app-list-item [vetProductsItem]="item"></app-list-item>
+        </li>
+      </ul> 
+  </section>
+</section>

@@ -1,0 +1,56 @@
+<header id="vet-home-header">
+  <div id="vet-home-slider">
+    <div class="vet-home-slide vet-home-slide-1" [ngClass]="{'slide-1-visible': slideOneVisability}" ></div>
+    <div class="vet-home-slide vet-home-slide-2" [ngClass]="{'slide-2-visible': slideTwoVisability}"></div>
+    <div class="vet-home-slide vet-home-slide-3" [ngClass]="{'slide-3-visible': slideThreeVisability}"></div>
+  </div>
+  <div id="vet-home-header-text">
+    <h1>Von GerHard</h1>
+    <h2>Тільки найкращі товари для Ваших улюбленців!</h2>
+  </div>
+  <img id="vet-home-mouse" src="assets/images/mouse_icon.svg" alt="Mouse icon">  
+</header>
+<section id="vet-home-products">
+  <div class="vet-home-products-h">
+    <h2>Наші продукти</h2>
+  </div>
+  <div id="vet-home-products-links">
+    <a routerLink="/meds" class="vet-home-product-item" id="meds-link">
+      <div class="product-name">
+        <h3>ВЕТПРЕПАРАТИ</h3>
+      </div>
+    </a>
+    <a routerLink="/feed" class="vet-home-product-item" id="feed-link">
+      <div class="product-name">
+        <h3>КОРМ</h3>
+      </div>
+    </a>
+    <a routerLink="/ammo" class="vet-home-product-item" id="ammo-link">
+      <div class="product-name">
+        <h3>АМУНІЦІЯ</h3>
+      </div>
+    </a>
+  </div>  
+</section>
+<section id="vet-home-about-us">
+  <h2>Про нас</h2>
+  <div class="about-us-info-block"> 
+    <ul class="about-us-list about-us-half">
+      <li>Von GerHard - це великий вибір якісних товарів для тварин, низькі ціни та якісне обслуговування.</li>
+      <li>Завдяки інтуітивному управлінню на нашому сайті Ви можете легко зробити замовлення.</li>
+      <li>Ми пропонуємо оперативну доставку в будь-яке місто України.</li>
+      <li>Постійні клієнти нашого сайту отримують знижки та подарунки.</li>
+    </ul>
+    <div class="about-us-contacts about-us-half">
+      <h3>Наші контакти</h3>
+      <p>Телефон: +38 (067) 111 11 11</p>
+      <p>Телефон: +38 (067) 111 11 11</p>
+      <p>E-mail: von-gerhard@gmail.com</p>
+      <p>Facebook:  </p>
+      <p>Instagram:  </p>
+    </div>
+  </div>
+  <a href="#vet-home-products" class="about-us-to-products-btn">
+    Обрати продукт
+  </a>
+</section>

@@ -1,0 +1,136 @@
+.product-full-wrap {
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 40px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    
+    h1 {
+        color: #5e6073;
+        font-family: 'Montserrat Alternates', sans-serif;
+        font-size: 40px;
+        text-align: center;
+    }
+    button {
+        width: 130px;
+        min-height: 30px;
+        padding: 5px;
+        text-align: center;
+        background-color: #5e6073;
+        color: white;
+        font-family: 'Montserrat Alternates', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: all 0.5s ease;
+        &:hover {
+            border: 2px solid #5e6073;
+            color: #5e6073;
+            background-color: transparent;
+        }
+    }
+}
+
+.product-container {
+    width: 95%;
+    padding: 40px;
+    margin-top: 15px;
+    background-color: rgba(94, 96, 115, 0.2);
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    
+}
+
+.product-full-info {   
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.product-full-image {
+    width: 300px;
+}
+
+.product-full-main-info {
+    margin-left: 20px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 24px;
+    p {
+        text-align: justify;
+        margin-bottom: 15px;
+    }
+    b {
+        font-weight: 600;
+    }
+}
+
+.price-value {
+    color: #2e3146;
+}
+
+.product-description {
+    color: #4e5270;
+}
+
+.product-full-button-block {
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 35px;
+}
+
+@media only screen and (max-width: 950px) {
+
+    .product-full-wrap {
+        padding: 80px 20px 20px 20px;
+    }
+    .product-description {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .product-full-info {   
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .product-full-main-info {
+        margin-left: 0px;
+    }
+    .product-image-block {
+        margin-bottom: 10px;
+    }
+    .product-full-button-block {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .product-full-wrap {
+        padding: 55px 10px 10px 10px;
+        h1 {
+            font-size: 30px;
+        }
+    }   
+    .product-container {       
+        padding: 15px;
+    }
+    .product-full-image, .product-full-button-block {
+        width: 60vw;
+    } 
+    .product-full-wrap {
+        button {
+            width: 25vw;
+            // min-height: 30px;
+            font-size: 4vw;
+        }
+    }
+}
+
+
