@@ -248,9 +248,12 @@
     width: 90%;
     height: 200px;
     margin-top: 20px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
+    text-align: center;
+    // vertical-align: middle;
+    // display: inline-flex;
+    // justify-content: center;
+    // align-items: center;
     background-image: url('../../../assets/images/vet-feed-img1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
