@@ -16,6 +16,7 @@ import { LocalStorageService } from './services/local-storage.service';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { NavigationComponent } from './components/navigation/navigation.component';
@@ -52,7 +53,8 @@ import { OurChildrenComponent } from './components/our-children/our-children.com
     AngularFirestoreModule,
     AngularFireStorageModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireAuthModule
   ],
   providers: [ 
     DataBaseService,

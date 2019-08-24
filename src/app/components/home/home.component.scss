@@ -251,12 +251,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('/assets/images/vet-feed-img1.jpg');
+    background-image: url('../../../assets/images/vet-feed-img1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left bottom;
     font-size: 9vw;
     font-weight: 900;
+    color: #5e6073;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

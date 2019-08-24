@@ -15,8 +15,8 @@ export class NavigationComponent implements OnInit, DoCheck, OnChanges {
   menuButtonVisabilityValue: boolean = true;
   loginState: boolean;
   loginFormVisability: boolean = true;
-  loginImage: string = '/assets/images/login-image.svg';
-  logoutImage: string = '/assets/images/logout-image.svg';
+  loginImage: string = 'assets/images/login-image.svg';
+  logoutImage: string = 'assets/images/logout-image.svg';
   buttonImage: string;
   basketCount: number;
 
@@ -47,9 +47,10 @@ export class NavigationComponent implements OnInit, DoCheck, OnChanges {
   hideShowNav() {
     let lastScrollValue = 0;
     window.onscroll = () => {
-      if(window.pageYOffset === 0 || lastScrollValue > window.pageYOffset) {
+      if(window.pageYOffset <= 0 || lastScrollValue > window.pageYOffset) {
         this.navVisability = true;
-      } else if (lastScrollValue < window.pageYOffset) {
+      } else {
+      //  if (lastScrollValue < window.pageYOffset) {
         this.navVisability = false;
       }       
       lastScrollValue = window.pageYOffset;

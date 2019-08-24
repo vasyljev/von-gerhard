@@ -58,7 +58,9 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.searchSubscription = this.searchForm.valueChanges.pipe(
       debounceTime(600),
       map(({productSearchControl, dogCheckboxControl, catCheckboxControl}) => { 
-        productSearchControl = productSearchControl.toLocaleLowerCase();``
+        if(productSearchControl) {
+          productSearchControl = productSearchControl.toLowerCase();
+        }
         if((dogCheckboxControl && this.dogInit) || (catCheckboxControl && this.catInit)) {
           this.dowloadListFromDB(this.searchType, productList);
           productList =  tmpList;          
@@ -70,7 +72,7 @@ export class SearchComponent implements OnInit, OnDestroy {
           productList = productList.filter(({animal}) => animal === 'cat');         
         }
         let result = productList.filter(({name}) => {
-          name = name.toLocaleLowerCase();
+          name = name.toLowerCase();
           if(!productSearchControl) {
             return true;
           } else if(name.search(productSearchControl) !== -1) {

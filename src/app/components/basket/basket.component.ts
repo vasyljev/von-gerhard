@@ -25,15 +25,21 @@ export class BasketComponent implements OnInit, DoCheck {
   userPhoneNumber: string;
   userEmail: string;
   userNovaPoshta: string;
+  itemCountChangeStatus: boolean;
 
 
   ngOnInit() {
     this.basketList = this.localStorageService.getBasketList();
+    this.orderSum = this.getOrderSum();
   }
 
   ngDoCheck() {
-    this.basketList = this.localStorageService.getBasketList();
-    this.orderSum = this.getOrderSum();
+    if(this.basketList.length != this.localStorageService.getBasketList().length || this.itemCountChangeStatus === true) {
+      this.basketList = this.localStorageService.getBasketList();
+      this.orderSum = this.getOrderSum();
+      this.itemCountChangeStatus = false;
+    }
+    
   }
 
   getOrderSum() {
@@ -49,6 +55,7 @@ export class BasketComponent implements OnInit, DoCheck {
 
   chengeItemCount(id: string, count: number) {
     this.localStorageService.changeItemCount(id, count);
+    this.itemCountChangeStatus = true;
   }
 
   makeOrder(userFirstName: string, userLastName: string, userPhoneNumber: string, userEmail: string, userNovaPoshta: string) {

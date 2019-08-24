@@ -32,12 +32,13 @@ export class AmmoComponent implements OnInit, DoCheck, OnDestroy {
   }
 
   ngDoCheck() {
-    this.ammoItems =  this.localStorageService.getProductsList(this.productType);
-
+    if(this.ammoItems.length != this.localStorageService.getProductsList(this.productType).length) {
+      this.ammoItems =  this.localStorageService.getProductsList(this.productType);
+    }
+    
   }
 
   ngOnDestroy() {
-    // this.localStorageService.clearTmpList();
     this.subscriptions.unsubscribe();
   }
 

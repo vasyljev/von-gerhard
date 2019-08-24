@@ -31,7 +31,9 @@ export class FeedComponent implements OnInit, DoCheck, OnDestroy {
   }
 
   ngDoCheck() {
-    this.feedItems =  this.localStorageService.getProductsList(this.productType);    
+    if(this.feedItems.length != this.localStorageService.getProductsList(this.productType).length) {
+      this.feedItems =  this.localStorageService.getProductsList(this.productType);    
+    }  
   }
 
   ngOnDestroy() {
