@@ -97,7 +97,6 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   dowloadListFromDB(type: string, list: VetProductsItem[]) {
-    console.log('dowloadListFromDB');
     if(list.length == 0) {
       if(type === 'meds') {
         this.subscriptions.add(

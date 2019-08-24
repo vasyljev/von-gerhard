@@ -27,13 +27,11 @@ export class OrdersComponent implements OnInit, DoCheck {
 
   initOrderList() {
     this.dataBaseService.getOrderList().subscribe(list => {
-      console.log('list', list);
       this.localStorageService.setOrderList(list);
     });
   }
 
   deleteOrder(order: Order) {
-    console.log('delete');
     this.dataBaseService.deleteOrder(order);
     this.localStorageService.deleteOrderItem(order);
   }

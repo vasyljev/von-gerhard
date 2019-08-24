@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck, OnChanges } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 
 import { LoginService } from '../../services/login.service';
 import { LocalStorageService } from '../../services/local-storage.service';
@@ -8,12 +8,12 @@ import { LocalStorageService } from '../../services/local-storage.service';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent implements OnInit, DoCheck, OnChanges {
+export class NavigationComponent implements OnInit, DoCheck {
 
   navVisability: boolean = true;
   menuVisabilityValue: boolean = false;
   menuButtonVisabilityValue: boolean = true;
-  loginState: boolean;
+  private loginState: boolean;
   loginFormVisability: boolean = true;
   loginImage: string = 'assets/images/login-image.svg';
   logoutImage: string = 'assets/images/logout-image.svg';
@@ -23,12 +23,7 @@ export class NavigationComponent implements OnInit, DoCheck, OnChanges {
   constructor(private loginService: LoginService,
     public localStorageService: LocalStorageService) { }
   
-  ngOnChanges() {
-    console.log('ngOnChanges');
-  }
-
   ngDoCheck() {
-    // console.log('ngDoCheck');
     this.loginState = this.localStorageService.getLoginStatus();
     if(this.loginState) {
       this.loginFormVisability = true;
@@ -50,7 +45,6 @@ export class NavigationComponent implements OnInit, DoCheck, OnChanges {
       if(window.pageYOffset <= 0 || lastScrollValue > window.pageYOffset) {
         this.navVisability = true;
       } else {
-      //  if (lastScrollValue < window.pageYOffset) {
         this.navVisability = false;
       }       
       lastScrollValue = window.pageYOffset;
@@ -60,12 +54,10 @@ export class NavigationComponent implements OnInit, DoCheck, OnChanges {
   getLoginState() {
     this.loginState = this.localStorageService.getLoginStatus();
     this.loginService.getUserState();
-    console.log('getLoginState loginState localStor navComp', this.loginState);
   }
 
   loginOrSignOut() {
     let loginStatus = this.localStorageService.getLoginStatus();
-    console.log('loginOrSignOut loginStatus navComp', loginStatus);
     if(loginStatus) {
       this.loginFormVisability = true;
       this.loginService.signOut();

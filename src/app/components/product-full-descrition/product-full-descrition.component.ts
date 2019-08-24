@@ -35,7 +35,6 @@ export class ProductFullDescritionComponent implements OnInit, DoCheck {
     let productsFeed: VetProductsItem[] = this.localStorageService.getProductsList('feed');
     let productsAmmo: VetProductsItem[] = this.localStorageService.getProductsList('ammo');
     let products : VetProductsItem[] = [...productsMeds, ...productsFeed, ...productsAmmo];
-    console.log('products', products);
     this.product = products.filter((item) => {
       return item.id === this.productID;
     })[0];

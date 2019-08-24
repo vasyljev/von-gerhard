@@ -5,7 +5,6 @@ import { StorageService } from '../../services/storage.service';
 import { VetProductsItem } from '../../models/vetProductsItem';
 
 import { LocalStorageService } from '../../services/local-storage.service';
-import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -19,7 +18,7 @@ export class AdminAddEditProductsComponent implements OnInit, DoCheck {
               private storageService: StorageService,
               private localStorageService: LocalStorageService) { }
 
-  adminModeValue: boolean;
+  private adminModeValue: boolean;
   visabilityValue: boolean = false;
 
   ngOnInit() {
@@ -39,7 +38,6 @@ export class AdminAddEditProductsComponent implements OnInit, DoCheck {
     this.storageService.uploadImage(file, type);
     setTimeout(()=> {
       this.storageService.getImageURL(type, file.name).subscribe(resp => {
-        console.log('resp subscribe', resp);
         let product: VetProductsItem = {
           'name': name,
           'type': type,
@@ -49,7 +47,6 @@ export class AdminAddEditProductsComponent implements OnInit, DoCheck {
           'count': 1,
           'animal': animal 
         }
-        console.log('Product', product);
         if(type == 'meds') {
           this.dataBaseService.addMedsItem(product);
         } else if(type == 'feed') {
@@ -57,7 +54,6 @@ export class AdminAddEditProductsComponent implements OnInit, DoCheck {
         } else if(type == 'ammo') {
           this.dataBaseService.addAmmoItem(product);
         }
-        // type == 'meds' ? this.dataBaseService.addMedsItem(product) : this.dataBaseService.addFeedItem(product);
       });
     }, 2000); 
   }  

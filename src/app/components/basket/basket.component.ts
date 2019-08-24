@@ -71,7 +71,6 @@ export class BasketComponent implements OnInit, DoCheck {
     let order: Order = {
       'orderInfo': `${orderUserInfo} Замовлення: ${orderProductsInfo}. Сума: ${this.getOrderSum()} грн.`
     };
-    // order['orderInfo'] = orderUserInfo + orderProductsInfo;
     this.dataBaseService.makeOrder(order);
     this.localStorageService.clearBasket();
     this.modalWindowVis = true;

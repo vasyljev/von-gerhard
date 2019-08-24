@@ -33,14 +33,12 @@ export class MedsComponent implements OnInit, DoCheck, OnDestroy {
 
   ngDoCheck() {
     if(this.medsItems.length != this.localStorageService.getProductsList(this.productType).length) {
-      console.log('ngDoCheck', this.medsItems, this.localStorageService.getProductsList(this.productType));
       this.medsItems =  this.localStorageService.getProductsList(this.productType);
     }
 
   }
 
   ngOnDestroy() {
-    // this.localStorageService.clearTmpList();
     this.subscriptions.unsubscribe();
   }
 
