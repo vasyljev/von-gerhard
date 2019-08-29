@@ -27,9 +27,8 @@ export class LoginService {
     this.afAuth.auth.onAuthStateChanged(function(user) {
       if (user) {
         successF();
-        console.log('Login Success');
       } else {
-        console.log('Login fails');
+        
       }
     });
   }

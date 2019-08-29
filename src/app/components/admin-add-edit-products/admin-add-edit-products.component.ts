@@ -18,7 +18,7 @@ export class AdminAddEditProductsComponent implements OnInit, DoCheck {
               private storageService: StorageService,
               private localStorageService: LocalStorageService) { }
 
-  private adminModeValue: boolean;
+  adminModeValue: boolean;
   visabilityValue: boolean = false;
 
   ngOnInit() {

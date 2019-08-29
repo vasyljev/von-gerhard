@@ -17,6 +17,7 @@ export class ListItemComponent implements OnInit, DoCheck {
   loginStatus: boolean;
   shurtProductDescription: string;
   basketStatus: boolean;
+  modalWindowVisability: boolean = false;
   
   constructor(private dataBase: DataBaseService,
               private localStorageService: LocalStorageService) { }
@@ -58,6 +59,10 @@ export class ListItemComponent implements OnInit, DoCheck {
 
   addProductToBasket(product: VetProductsItem) {
     this.localStorageService.addItemToBasket(product);
+  }
+
+  toogleModalWindowVisability() {
+    this.modalWindowVisability = !this.modalWindowVisability;
   }
 
 }

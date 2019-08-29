@@ -13,7 +13,7 @@ export class NavigationComponent implements OnInit, DoCheck {
   navVisability: boolean = true;
   menuVisabilityValue: boolean = false;
   menuButtonVisabilityValue: boolean = true;
-  private loginState: boolean;
+  loginState: boolean = false;
   loginFormVisability: boolean = true;
   loginImage: string = 'assets/images/login-image.svg';
   logoutImage: string = 'assets/images/logout-image.svg';
@@ -53,7 +53,7 @@ export class NavigationComponent implements OnInit, DoCheck {
 
   getLoginState() {
     this.loginState = this.localStorageService.getLoginStatus();
-    this.loginService.getUserState();
+    // this.loginService.getUserState();
   }
 
   loginOrSignOut() {

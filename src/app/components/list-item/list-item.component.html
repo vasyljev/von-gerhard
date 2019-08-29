@@ -1,6 +1,7 @@
 <article class="vet-list-item">
   <button class="delete-item-button" 
-          (click)="deleteItem(vetProductsItem, vetProductsItem.type)" 
+          (click)="toogleModalWindowVisability()"
+          
           *ngIf="loginStatus"></button>
   <div class="vet-product-img-container">
       <img [src]="vetProductsItem?.imageURL ? vetProductsItem?.imageURL : '/assets/images/image-not-found.jpg'" alt="Item image">
@@ -16,3 +17,12 @@
     <button (click)="addOrDeletePRoductFromBasket(vetProductsItem)">{{basketStatus ? 'Видалити з кошика' : 'Додати в кошик'}}</button>
   </div>
 </article>
+<div class="modal-window-wrap" *ngIf="modalWindowVisability">
+  <div class="modal-window">
+    <p>Ви дійсно хочете видалити об'єкт {{vetProductsItem?.name}}?</p>
+    <div class="modal-window-button-blk">
+      <button id="modal-window-delete-btn" (click)="deleteItem(vetProductsItem, vetProductsItem.type); toogleModalWindowVisability()"  >Так</button>
+      <button id="modal-window-no-btn" (click)="toogleModalWindowVisability()">Ні</button>
+    </div>
+  </div>
+</div>

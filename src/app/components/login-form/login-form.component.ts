@@ -33,6 +33,7 @@ export class LoginFormComponent implements OnInit {
     this.loginService.loginEmailPassword(email, password);
     setTimeout(() => {
       this.resetLoginForm(form);
+      this.loginService.getUserState();
     }, 1000);
     
   }
