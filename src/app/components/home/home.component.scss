@@ -196,13 +196,35 @@
     align-items: center;
     font-family: 'Montserrat Alternates', sans-serif;
     background-color: rgba(242, 244, 209, 1);
-
     h2 {
         color: #5e6073;
         font-size: 40px;
         font-weight: 800;
-        margin: 40px 0px;
+        margin: 40px 0px 25px 0;
     }
+    h3 {
+        color: #5e6073;
+        font-size: 20px;
+        font-weight: 800;
+        margin: 5px 0px;
+        text-align: center;
+    }
+}
+
+.about-us-text {
+    font-size: 20px;
+    padding: 0 15px;
+    text-indent: 20px;
+    text-align: justify;
+    line-height: 25px;
+}
+
+.about-us-list-header {
+    color: #5e6073;
+    font-size: 20px;
+    font-weight: 800;
+    margin: 10px 15px;
+    text-align: left;
 }
 
 .about-us-info-block {
@@ -220,14 +242,17 @@
 }
 
 .about-us-list {
-    width: 65%;
+    width: 63%;
     li {
         background-image: url('/assets/images/logo_only.png');
         background-size: 30px;
+        background-position: 0px 5px;
+        line-height: 30px;
         background-repeat: no-repeat;
         padding-left: 37px;
         margin-bottom: 25px;
-        font-size: 30px;
+        font-size: 20px;
+        text-align: justify;
     }
 }
 
@@ -241,6 +266,7 @@
     p {
         font-size: 23px;
         margin-bottom: 10px;
+        line-height: 25px;
     }
 }
 
@@ -248,22 +274,17 @@
     width: 90%;
     height: 200px;
     margin-top: 20px;
-    // display: block;
     text-align: center;
-    // vertical-align: middle;
-    // display: inline-flex;
-    // justify-content: center;
-    // align-items: center;
     background-image: url('../../../assets/images/vet-feed-img1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left bottom;
     font-size: 9vw;
     font-weight: 900;
-    color: #5e6073;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: #5e6073;
     text-decoration: none;
     cursor: pointer;
 }
@@ -292,7 +313,7 @@
         padding: 10px 10px;
     }
     .about-us-list {
-        width: 60%;
+        width: 58%;
     }
     
     .about-us-contacts {
@@ -330,8 +351,14 @@
     .vet-home-slide {
         background-position: center center;
     }
+    .about-us-text {
+        font-size: 18px;
+        padding: 0 10px;       
+        line-height: 20px;
+    }
     .about-us-to-products-btn {
         font-size: 8vw;
+        height: 100px;
         // margin-top: 0px;
     }
     .about-us-info-block {
@@ -339,7 +366,8 @@
         justify-content: flex-start;
         align-items: stretch;
         li, p {
-            font-size: 25px;
+            font-size: 18px;
+            line-height: 20px;            
         }
     }
     .about-us-list {
@@ -370,12 +398,16 @@
 @media only screen and (max-width: 460px) {
     .about-us-info-block {
         li, p {
-            font-size: 18px;
-        }
-    }
-    .about-us-info-block {
-        p {
             font-size: 16px;
         }
     }
+    .about-us-text {
+        font-size: 16px;       
+        line-height: 18px;
+    }
+    // .about-us-info-block {
+    //     p {
+    //         font-size: 16px;
+    //     }
+    // }
 }

@@ -42,6 +42,15 @@ footer {
     color: white;
     font-family: 'K2D', sans-serif;
     width: 100%;
+    a {
+        color: white;
+        text-decoration: none;
+        font-family: 'K2D', sans-serif;
+        transition: color 1s ease;
+        &:hover {
+            color: yellow;
+        }
+    }
 }
 
 ol, ul {
