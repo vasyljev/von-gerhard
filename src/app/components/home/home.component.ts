@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
     this.slideShowValue = true;
     this.changeVisabilityOfSlides(this.slideShowValue);
     this.navScrollFunction();
+    this.productsAnimation();
   }
 
   ngOnDestroy() {
@@ -72,4 +73,32 @@ export class HomeComponent implements OnInit {
     }, false);
       }
   }
+
+  isPartiallyVisible(element) {
+		let elementBounding = element.getBoundingClientRect()
+		let topValue = elementBounding.top;
+		let bottomValue = elementBounding.bottom;
+		let heightValue = elementBounding.height;
+		return ((topValue + heightValue >= 0) && (heightValue + window.innerHeight >= bottomValue));
+  }
+  
+  productsAnimation() {
+    document.addEventListener('scroll', () => {
+      let time = 5;
+      const productBlocks = document.getElementsByClassName('vet-home-product-item');
+      for(let i = 0; i < productBlocks.length; i++) {
+        let product = productBlocks[i];
+        if(this.isPartiallyVisible(product)) {
+          // console.log('scroll', time, product);
+          setTimeout(()=>{
+            product.classList.remove('pre-anim-hide');
+            product.classList.add('after-anim-show');
+          }, time * 100);
+          time = time + 2;
+        }
+        
+      }
+    })
+  }
+
 }
