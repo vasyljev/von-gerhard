@@ -14,7 +14,7 @@ export class ListItemComponent implements OnInit, DoCheck {
 
   @Input() vetProductsItem: VetProductsItem;
 
-  loginStatus: boolean;
+  private loginStatus: boolean;
   shurtProductDescription: string;
   basketStatus: boolean;
   modalWindowVisability: boolean = false;
@@ -30,6 +30,10 @@ export class ListItemComponent implements OnInit, DoCheck {
   ngDoCheck() {
     this.loginStatus = this.localStorageService.getLoginStatus();
     this.basketStatus = this.localStorageService.checkProductInBasket(this.vetProductsItem);
+  }
+
+  getLoginState(): boolean {
+    return this.loginStatus;
   }
 
   deleteItem(item: VetProductsItem, type: string) {

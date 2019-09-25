@@ -1,5 +1,5 @@
-<button class="admin-panel-button" *ngIf="adminModeValue" [ngClass]="{'invisible': visabilityValue}" (click)="openOrCloseLoginForm()">Додати об'єкт</button>
-<section class="vet-admin-section" *ngIf="adminModeValue" [ngClass]="{'invisible': !visabilityValue}">
+<button class="admin-panel-button" *ngIf="getAdminState()" [ngClass]="{'invisible': visabilityValue}" (click)="openOrCloseLoginForm()">Додати об'єкт</button>
+<section class="vet-admin-section" *ngIf="getAdminState()" [ngClass]="{'invisible': !visabilityValue}">
   <div class="vet-admin-panel-wrap">
     <button class="admin-close-button" (click)="openOrCloseLoginForm()"></button>
     <form #myForm="ngForm" class="vet-admin-panel" 

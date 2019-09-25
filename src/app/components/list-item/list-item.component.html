@@ -2,7 +2,7 @@
   <button class="delete-item-button" 
           (click)="toogleModalWindowVisability()"
           
-          *ngIf="loginStatus"></button>
+          *ngIf="getLoginState()"></button>
   <div class="vet-product-img-container">
       <img [src]="vetProductsItem?.imageURL ? vetProductsItem?.imageURL : '/assets/images/image-not-found.jpg'" alt="Item image">
       <div class="price-block">

@@ -49,12 +49,12 @@ export class HomeComponent implements OnInit {
   }
 
   navScrollFunction() {
-    let linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
-         V = 0.8;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
+    let linkNav = document.querySelectorAll('[href^="#"]'),
+         V = 0.4;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
     for (var i = 0; i < linkNav.length; i++) {
-      linkNav[i].addEventListener('click', function(e) { //по клику на ссылку
-      e.preventDefault(); //отменяем стандартное поведение
-      let w = window.pageYOffset,  // производим прокрутка прокрутка
+      linkNav[i].addEventListener('click', function(e) {
+      e.preventDefault();
+      let w = window.pageYOffset,  
         hash = this.href.replace(/[^#]*(.*)/, '$1');  // к id элемента, к которому нужно перейти
       let t = document.querySelector(hash).getBoundingClientRect().top,  // отступ от окна браузера до id
             start = null;
@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
           if (r != w + t) {
             requestAnimationFrame(step)
           } else {
-            location.hash = hash  // URL с хэшем
+            location.hash = hash  
           }
         }
     }, false);

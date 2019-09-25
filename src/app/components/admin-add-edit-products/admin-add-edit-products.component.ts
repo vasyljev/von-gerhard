@@ -18,7 +18,7 @@ export class AdminAddEditProductsComponent implements OnInit, DoCheck {
               private storageService: StorageService,
               private localStorageService: LocalStorageService) { }
 
-  adminModeValue: boolean;
+  private adminModeValue: boolean;
   visabilityValue: boolean = false;
 
   ngOnInit() {
@@ -31,6 +31,10 @@ export class AdminAddEditProductsComponent implements OnInit, DoCheck {
 
   setAdminMode() {
     this.adminModeValue = this.localStorageService.getLoginStatus();
+  }
+
+  getAdminState(): boolean {
+    return this.adminModeValue;
   }
   
   uploadProduct(type: string, name: string, price: number, descriprion: string, animal: string,  file) {

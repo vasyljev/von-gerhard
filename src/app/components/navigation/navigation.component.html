@@ -4,18 +4,18 @@
       <h3>Von GerHard</h3>
   </div>
   <ul id="main-nav-list">
-    <li><a routerLink="/">Головна</a></li>
-    <li><a routerLink="/meds">Ветпрепарати</a></li>
-    <li><a routerLink="/feed">Корм</a></li>
-    <li><a routerLink="/ammo">Амуніція</a></li>
-    <li><a routerLink="/children">Наші діти</a></li>
-    <li><a routerLink="/basket">
+    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Головна</a></li>
+    <li><a routerLink="/meds" routerLinkActive="active">Ветпрепарати</a></li>
+    <li><a routerLink="/feed" routerLinkActive="active">Корм</a></li>
+    <li><a routerLink="/ammo" routerLinkActive="active">Амуніція</a></li>
+    <li><a routerLink="/children" routerLinkActive="active">Наші діти</a></li>
+    <li><a routerLink="/basket" routerLinkActive="active">
       <div class="basket-wrap">
         <img src="assets/images/basket-image.svg" alt="Basket">
         <div class="basket-count-block" *ngIf="!!basketCount">{{basketCount}}</div>
       </div>
     </a></li>
-    <li *ngIf="loginState"><a routerLink="/orders">Замовлення</a></li>
+    <li *ngIf="loginState"><a routerLink="/orders" routerLinkActive="active">Замовлення</a></li>
     <li><button [ngStyle]="{'background-image': buttonImage}" class="login-button" (click)="loginOrSignOut()"></button></li>
   </ul>
   <div id="burger-menu-button" (click)="showHideMenu()">
@@ -25,18 +25,18 @@
 <nav id="nav-burger">    
     <ul id="small-nav-list" class="hide-nav" [ngClass]="{'show-nav': menuVisabilityValue}">
         <button id="close-menu-button" (click)="showHideMenu()"></button>
-        <li (click)="showHideMenu()"><a routerLink="/">Додому</a></li>
-        <li (click)="showHideMenu()"><a routerLink="/meds">Ветпрепарати</a></li>
-        <li (click)="showHideMenu()"><a routerLink="/feed">Корм</a></li>
-        <li (click)="showHideMenu()"><a routerLink="/ammo">Амуніція</a></li>
-        <li (click)="showHideMenu()"><a routerLink="/children">Наші діти</a></li>
-        <li (click)="showHideMenu()" ><a id="nav-basket-li" routerLink="/basket">Кошик
+        <li (click)="showHideMenu()"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Головна</a></li>
+        <li (click)="showHideMenu()"><a routerLink="/meds" routerLinkActive="active">Ветпрепарати</a></li>
+        <li (click)="showHideMenu()"><a routerLink="/feed" routerLinkActive="active">Корм</a></li>
+        <li (click)="showHideMenu()"><a routerLink="/ammo" routerLinkActive="active">Амуніція</a></li>
+        <li (click)="showHideMenu()"><a routerLink="/children" routerLinkActive="active">Наші діти</a></li>
+        <li (click)="showHideMenu()" ><a id="nav-basket-li" routerLink="/basket" routerLinkActive="active">Кошик
           <div id="nav-basket-wrap" class="basket-wrap" (click)="showHideMenu()">
             <img (click)="showHideMenu()" src="assets/images/basket-image.svg" alt="Basket">
             <div class="basket-count-block" *ngIf="!!basketCount">{{basketCount}}</div>
           </div>
         </a></li>
-        <li *ngIf="loginState" (click)="showHideMenu()"><a routerLink="/orders">Замовлення</a></li>
+        <li *ngIf="getLoginState()" (click)="showHideMenu()"><a routerLink="/orders" routerLinkActive="active">Замовлення</a></li>
         <li (click)="showHideMenu()" (click)="loginOrSignOut()">Режим адміністратора<button [ngStyle]="{'background-image': buttonImage}" class="login-button burger-login-button"></button></li>
       </ul>
 </nav>
