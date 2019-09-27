@@ -89,7 +89,6 @@ export class HomeComponent implements OnInit {
       for(let i = 0; i < productBlocks.length; i++) {
         let product = productBlocks[i];
         if(this.isPartiallyVisible(product)) {
-          // console.log('scroll', time, product);
           setTimeout(()=>{
             product.classList.remove('pre-anim-hide');
             product.classList.add('after-anim-show');

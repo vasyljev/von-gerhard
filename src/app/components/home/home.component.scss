@@ -101,6 +101,7 @@
     height: 100vh;
     background-color: rgba(242, 244, 209, 1);
     position: relative;
+    
     h2 {
         
         width: 350px;
@@ -140,7 +141,7 @@
     align-items: center;
     position: relative;
     z-index: 0;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .vet-home-product-item { 
@@ -161,7 +162,7 @@
 
 .pre-anim-hide {
     opacity: 0;
-    transform: translate3d(0px, 100px, 0); 
+    transform: translate3d(0, 100px, 0); 
 }
 
 .after-anim-show {
