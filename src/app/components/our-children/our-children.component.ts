@@ -1,17 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-our-children',
   templateUrl: './our-children.component.html',
   styleUrls: ['./our-children.component.scss']
 })
-export class OurChildrenComponent implements OnInit {
+export class OurChildrenComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  childrenFirstAnim = ()=>{this.childrenAnimation('first-child', 'pre-anim-left')};
+  childrenSecondAnim = () => {this.childrenAnimation('second-child', 'pre-anim-right')};
 
-  ngOnInit() {
-    this.childrenAnimation('first-child', 'pre-anim-left');
-    this.childrenAnimation('second-child', 'pre-anim-right');
+  constructor() {}
+  
+  ngOnInit() {    
+    document.addEventListener('scroll', this.childrenFirstAnim);
+    document.addEventListener('scroll', this.childrenSecondAnim);
+  }
+
+  ngOnDestroy() {
+    document.removeEventListener('scroll', this.childrenFirstAnim);
+    document.removeEventListener('scroll', this.childrenSecondAnim);
   }
 
   isPartiallyVisible(element) {
@@ -22,9 +30,8 @@ export class OurChildrenComponent implements OnInit {
     return ((topValue + heightValue >= 0) && (heightValue + window.innerHeight >= bottomValue));
   }
 
-  childrenAnimation(childElement: string, preAnimClass: string) {
-    const elementDescription = document.querySelectorAll(`#${childElement}>.child-description>p`)[0];
-    document.addEventListener('scroll', () => {
+  childrenAnimation(childElement: string, preAnimClass: string) {   
+      const elementDescription = document.querySelectorAll(`#${childElement}>.child-description>p`)[0];
       const element = document.getElementById(childElement);
       if(this.isPartiallyVisible(element)) {
         element.classList.remove(preAnimClass);
@@ -34,6 +41,6 @@ export class OurChildrenComponent implements OnInit {
           elementDescription.classList.add('after-anim');
         }, 800);
       }      
-    });
-  }
+    };
+  
 }
