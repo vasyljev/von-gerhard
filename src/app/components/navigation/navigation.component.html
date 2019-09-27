@@ -15,7 +15,7 @@
         <div class="basket-count-block" *ngIf="!!basketCount">{{basketCount}}</div>
       </div>
     </a></li>
-    <li *ngIf="loginState"><a routerLink="/orders" routerLinkActive="active">Замовлення</a></li>
+    <li *ngIf="getLoginState()"><a routerLink="/orders" routerLinkActive="active">Замовлення</a></li>
     <li><button [ngStyle]="{'background-image': buttonImage}" class="login-button" (click)="loginOrSignOut()"></button></li>
   </ul>
   <div id="burger-menu-button" (click)="showHideMenu()">
