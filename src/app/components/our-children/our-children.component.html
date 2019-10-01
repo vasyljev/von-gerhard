@@ -2,23 +2,14 @@
     <h1>Von GerHard</h1>
   </header>
   <section class="vet-children-list">
-    <h2>Наші діти</h2>
-    <p class="children-main-info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt culpa et distinctio perspiciatis molestiae quia soluta quo facilis velit, corporis, sequi cum officiis? Totam quis consequuntur velit dolor sit architecto? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum eos esse quae quaerat autem hic alias totam, dignissimos nesciunt quia fuga necessitatibus delectus illum eveniet sint, ipsa repellat. Obcaecati, ex?</p>
-    <!-- <p class="children-main-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad eum saepe molestiae hic beatae quia voluptatibus pariatur, ipsa numquam dolores obcaecati impedit perferendis odit ullam porro recusandae in maxime similique.</p> -->
-    <div class="child-item pre-anim-left" id="first-child">
-      <div class="child-img">
-        <img src="assets/images/von_gerhard/children-1.png" alt="Child">
-      </div>
-      <div class="child-description right-description">
-        <p class="pre-anim-bottom">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis expedita magni consectetur, numquam architecto quas esse, voluptatem autem ad beatae tempore voluptas quia enim a, impedit deserunt error iste quis!</p>
-      </div>
+    <h2>Розплідник</h2>
+    <div class="vet-children-head-text">
+      <p class="children-main-info">Вітаємо Вас у нашому розпліднику Von GerHard! Зверніться до нас, і ми негайно допоможемо знайти цуценя, що відповідає всім Вашим вимогам, або просто допоможемо порадою.</p>
+      <p class="children-main-info">На нашому сайті Ви знайдете фото цуценят наших вихованців, опис і стандарт, дізнаєтеся історію походження порід. У розпліднику Von GerHard Ви зможете вибрати і купити цуценя шоу класу і займатися виставкової кар'єрою свого вихованця, придбати і виховати собаку охоронця або просто знайдете відданого друга.</p>
     </div>
-    <div class="child-item reverse-flex pre-anim-right" id="second-child">        
-        <div class="child-description left-description">
-          <p class="pre-anim-bottom">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis expedita magni consectetur, numquam architecto quas esse, voluptatem autem ad beatae tempore voluptas quia enim a, impedit deserunt error iste quis!</p>
-        </div>
-        <div class="child-img">
-            <img src="assets/images/von_gerhard/children-3.jpg" alt="Child">
-          </div>
-      </div>
+    <div class="children-main-links-block">
+      <a routerLink="/children/adult" >Дорослі</a>
+      <a routerLink="/children/puppies" id="puppies-children-link">Цуценята</a>
+    </div>
+    <router-outlet></router-outlet>
   </section>

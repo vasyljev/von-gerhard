@@ -28,6 +28,8 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { SearchComponent } from './components/search/search.component';
 import { AmmoComponent } from './components/ammo/ammo.component';
 import { OurChildrenComponent } from './components/our-children/our-children.component';
+import { AdultChildrenComponent } from './components/adult-children/adult-children.component';
+import { SmallChildrenComponent } from './components/small-children/small-children.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { OurChildrenComponent } from './components/our-children/our-children.com
     OrdersComponent,
     SearchComponent,
     AmmoComponent,
-    OurChildrenComponent
+    OurChildrenComponent,
+    AdultChildrenComponent,
+    SmallChildrenComponent
   ],
   imports: [
     BrowserModule,
