@@ -70,6 +70,14 @@
     }
 }
 
+#first-child {
+    animation: child-animation-left 1.5s ease;
+}
+
+#second-child {
+    animation: child-animation-right 3s ease;
+}
+
 .pre-anim-left {
     transform: translate3d(-100px, 0, 0);
     opacity: 0;
@@ -88,6 +96,28 @@
 .after-anim {
     transform: translate3d(0, 0, 0);
     opacity: 1;
+}
+
+@keyframes child-animation-right {
+    0% {
+        transform: translate3d(100px, 0, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes child-animation-left {
+    0% {
+        transform: translate3d(-100px, 0, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
 }
 
 

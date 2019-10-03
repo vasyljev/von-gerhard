@@ -7,40 +7,39 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class OurChildrenComponent implements OnInit {
 
-  // childrenFirstAnim = ()=>{this.childrenAnimation('first-child', 'pre-anim-left')};
-  // childrenSecondAnim = () => {this.childrenAnimation('second-child', 'pre-anim-right')};
-
+  
   constructor() {}
   
   ngOnInit() {    
-    // document.addEventListener('scroll', this.childrenFirstAnim);
-    // document.addEventListener('scroll', this.childrenSecondAnim);
+   this.navScrollFunction() ;
   }
 
-  // ngOnDestroy() {
-  //   document.removeEventListener('scroll', this.childrenFirstAnim);
-  //   document.removeEventListener('scroll', this.childrenSecondAnim);
-  // }
+  
 
-  // isPartiallyVisible(element) {
-  //   let elementBounding = element.getBoundingClientRect();
-  //   let topValue = elementBounding.top;
-  //   let bottomValue = elementBounding.bottom;
-  //   let heightValue = elementBounding.height;
-  //   return ((topValue + heightValue >= 0) && (heightValue + window.innerHeight >= bottomValue));
-  // }
-
-  // childrenAnimation(childElement: string, preAnimClass: string) {   
-  //     const elementDescription = document.querySelectorAll(`#${childElement}>.child-description>p`)[0];
-  //     const element = document.getElementById(childElement);
-  //     if(this.isPartiallyVisible(element)) {
-  //       element.classList.remove(preAnimClass);
-  //       element.classList.add('after-anim');
-  //       setTimeout(()=>{
-  //         elementDescription.classList.remove('pre-anim-bottom');
-  //         elementDescription.classList.add('after-anim');
-  //       }, 800);
-  //     }      
-  // };
+  navScrollFunction() {
+    let linkNav = document.querySelectorAll('[href^="#"]'),
+         V = 0.9; 
+    for (var i = 0; i < linkNav.length; i++) {
+      linkNav[i].addEventListener('click', function(e) {
+      e.preventDefault();
+      let w = window.pageYOffset,  
+        hash = this.href.replace(/[^#]*(.*)/, '$1');  
+      let t = document.querySelector(hash).getBoundingClientRect().top,  
+            start = null;
+      requestAnimationFrame(step);  
+      function step(time) {
+        if (start === null) start = time;
+          let progress = time - start,
+              r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
+          window.scrollTo(0,r);
+          if (r != w + t) {
+            requestAnimationFrame(step)
+          } else {
+            location.hash = hash  
+          }
+        }
+    }, false);
+      }
+  }
   
 }
