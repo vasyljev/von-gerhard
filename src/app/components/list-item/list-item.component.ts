@@ -37,7 +37,14 @@ export class ListItemComponent implements OnInit, DoCheck {
   }
 
   deleteItem(item: VetProductsItem, type: string) {
-    type == 'meds' ? this.dataBase.deleteMedsItem(item) : this.dataBase.deleteFeedItem(item);
+    // type == 'meds' ? this.dataBase.deleteMedsItem(item) : this.dataBase.deleteFeedItem(item);
+    if(type == 'meds') {
+      this.dataBase.deleteMedsItem(item);
+    } else if(type == 'feed') {
+      this.dataBase.deleteFeedItem(item);
+    } else if(type == 'ammo') {
+      this.dataBase.deleteAmmoItem(item);
+    }
   }
 
   cutProductDescription() {

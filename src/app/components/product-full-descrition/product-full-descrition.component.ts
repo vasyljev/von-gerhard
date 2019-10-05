@@ -15,6 +15,7 @@ export class ProductFullDescritionComponent implements OnInit, DoCheck {
   productID: string;
   product: VetProductsItem;
   basketStatus: boolean;
+  productDescription: string;
 
   constructor(private activetedRoute: ActivatedRoute,
               private localStorageService: LocalStorageService,
@@ -55,6 +56,12 @@ export class ProductFullDescritionComponent implements OnInit, DoCheck {
 
   goBack() {
     this.location.back();
+  }
+
+  makeHTMLProductDescription(description: string) {
+    let re = /\n/g;
+    let tmpDescription = description.replace(re, '</p><p>');
+    return '<p>' + tmpDescription + '</p>';
   }
 
 }

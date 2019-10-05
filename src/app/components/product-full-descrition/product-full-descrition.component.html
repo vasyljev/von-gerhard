@@ -11,7 +11,7 @@
       </div>
       <div class="product-full-main-info">
         <p class="price-value"><b>Ціна:</b> {{product?.price}} грн.</p>
-        <p class="product-description"><b>Опис:</b> {{product?.description}}</p>
+        <p class="product-description" [innerHTML]="makeHTMLProductDescription(product.description)"></p>
       </div>
     </div>
     
