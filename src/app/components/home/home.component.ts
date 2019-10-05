@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.slideShowValue = true;
     this.changeVisabilityOfSlides(this.slideShowValue);
-    this.navScrollFunction();
     this.productsAnimation();
   }
 
@@ -49,30 +48,21 @@ export class HomeComponent implements OnInit {
   }
 
   navScrollFunction() {
-    let linkNav = document.querySelectorAll('[href^="#"]'),
-         V = 0.4;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
-    for (var i = 0; i < linkNav.length; i++) {
-      linkNav[i].addEventListener('click', function(e) {
-      e.preventDefault();
-      let w = window.pageYOffset,  
-        hash = this.href.replace(/[^#]*(.*)/, '$1');  // к id элемента, к которому нужно перейти
-      let t = document.querySelector(hash).getBoundingClientRect().top,  // отступ от окна браузера до id
-            start = null;
-      requestAnimationFrame(step);  // подробнее про функцию анимации [developer.mozilla.org]
-      function step(time) {
-        if (start === null) start = time;
-          let progress = time - start,
-              r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
-          window.scrollTo(0,r);
-          if (r != w + t) {
-            requestAnimationFrame(step)
-          } else {
-            location.hash = hash  
-          }
+    let V = 0.9; 
+    let w = window.pageYOffset;  
+    let t = document.getElementById('vet-home-products').getBoundingClientRect().top,  
+        start = null;
+    requestAnimationFrame(step);  
+    function step(time) {
+      if (start === null) start = time;
+        let progress = time - start,
+            r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
+        window.scrollTo(0,r);
+        if (r != w + t) {
+          requestAnimationFrame(step)
         }
-    }, false);
       }
-  }
+    }
 
   isPartiallyVisible(element) {
 		let elementBounding = element.getBoundingClientRect()
