@@ -432,6 +432,38 @@
 }
 
 @media only screen and (max-width: 460px) {
+
+    .vet-home-slide-1 {
+        background-image: url('/assets/images/small/vet-slider-111.jpg');
+        z-index: 2;
+    }
+    
+    .vet-home-slide-2 {
+        background-image: url('/assets/images/small/vet-slider-2.jpg');
+        z-index: 1;
+    }
+    
+    .vet-home-slide-3 {
+        background-image: url('/assets/images/small/vet-slider-3.jpg');
+        z-index: 0;
+    }
+
+    #meds-link {
+        background-image: url('/assets/images/small/vet-meds-img.jpg');
+    }
+    
+    #feed-link {
+        background-image: url('/assets/images/small/vet-feed-img1.jpg');
+    }
+    
+    #ammo-link {
+        background-image: url('/assets/images/small/vet-ammo-img1.jpg');
+    }
+
+    .about-us-to-products-btn {
+        background-image: url('../../../assets/images/small/vet-feed-img1.jpg');
+    }
+
     .about-us-info-block {
         li, p {
             font-size: 16px;
