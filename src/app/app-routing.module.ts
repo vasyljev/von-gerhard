@@ -14,6 +14,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { AdminGuard } from './admin.guard';
 
 
+
 const childrenRoutes: Routes =[
   {path: 'adult', component: AdultChildrenComponent},
   {path: 'puppies', component: SmallChildrenComponent}
@@ -21,9 +22,9 @@ const childrenRoutes: Routes =[
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'meds', component: MedsComponent},
-  {path: 'feed', component: FeedComponent},
-  {path: 'ammo', component: AmmoComponent},
+  {path: 'meds', loadChildren: './components/meds/meds.module#MedsModule'},
+  {path: 'feed', loadChildren: './components/feed/feed.module#FeedModule'},
+  {path: 'ammo', loadChildren: './components/ammo/ammo.module#AmmoModule'},
   {path: 'children', component: OurChildrenComponent, children: childrenRoutes},  
   {path: 'full-info/:id', component: ProductFullDescritionComponent},
   {path: 'basket', component: BasketComponent},
