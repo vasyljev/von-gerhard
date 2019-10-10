@@ -37,7 +37,9 @@
           </div>
         </a></li>
         <li *ngIf="getLoginState()" (click)="showHideMenu()"><a routerLink="/orders" routerLinkActive="active">Замовлення</a></li>
-        <li (click)="showHideMenu()" (click)="loginOrSignOut()">Режим адміністратора<button [ngStyle]="{'background-image': buttonImage}" class="login-button burger-login-button"></button></li>
+        <!-- <li (click)="showHideMenu()" (click)="loginOrSignOut()">Режим адміністратора<button [ngStyle]="{'background-image': buttonImage}" class="login-button burger-login-button"></button></li> -->
+        <li (click)="showHideMenu()" (click)="loginOrSignOut()">Режим адміністратора</li>
+
       </ul>
 </nav>
 

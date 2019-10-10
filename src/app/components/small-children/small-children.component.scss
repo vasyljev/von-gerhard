@@ -78,6 +78,38 @@
     opacity: 1;
 }
 
+#first-child-item {
+    animation: child-animation-left 1.5s ease;
+}
+
+#second-child-item {
+    animation: child-animation-right 3s ease;
+}
+
+
+
+@keyframes child-animation-right {
+    0% {
+        transform: translate3d(100px, 0, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes child-animation-left {
+    0% {
+        transform: translate3d(-100px, 0, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
 
 @media only screen and (max-width: 1100px) {
     .child-description {

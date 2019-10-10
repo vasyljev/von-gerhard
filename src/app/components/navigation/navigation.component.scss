@@ -1,4 +1,3 @@
-
 #main-navbar {
     width: 100%;
     min-height: 50px;
@@ -16,7 +15,6 @@
         background-color: rgba(242, 244, 209, 1);
     }
 }
-
 #main-nav-list {
     width: 70vw;
     display: flex;
@@ -35,7 +33,6 @@
 
     }
 }
-
 .logo-wrap {
     display: flex;
     flex-direction: column;
@@ -46,19 +43,15 @@
         color: #5e6073;            
     }
 }
-
 #main-logo-img {
     width: 70px;
 }
-
 .hide-nav-bar {
     transform: translate3d(0, -100px, 0);
 }
-
 .show-nav-bar {
     transform: translate3d(0, 0, 0);
 }
-
 .basket-wrap {
     width: 25px;
     min-height: 20px;
@@ -71,7 +64,6 @@
         opacity: 0.8;
     }
 }
-
 .basket-count-block {
     width: 15px;
     height: 15px;
@@ -86,7 +78,6 @@
     text-align: center;
     vertical-align: middle;
 }
-
 .login-button {
     width: 20px;
     min-height: 20px;
@@ -101,12 +92,10 @@
         opacity: 0.8;
     }
 }
-
 .invisible {
     visibility: hidden;
     display: none !important;
 }
-
 #nav-burger {
     display: none;
     flex-direction: column;
@@ -116,7 +105,6 @@
         width: 40px;
     }
 }
-
 #burger-menu-button {
     display: none;
     text-align: right;
@@ -124,7 +112,6 @@
         width: 40px;
     }
 }
-
 #small-nav-list {
     position: fixed;
     top: 0;
@@ -142,7 +129,7 @@
         padding-bottom: 20px;
     }
     li, a {
-        font-size: 5vw;
+        font-size: 3vw;
         cursor: pointer;
         color: #5e6073;
         text-decoration: none;
@@ -154,7 +141,6 @@
     }
     transition: transform 0.5s ease;
 }
-
 .active {
     
     color: #292950 !important;
@@ -163,17 +149,14 @@
 .hide-nav {    
     transform: translate3d(-700px, 0px, 0px);
 }
-
 .show-nav {
     transform: translate3d(0px, 0px, 0px);
 }
-
 #nav-basket-li {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
-
 #nav-basket-wrap {
     margin-left: 10px;
     width: 25px;
@@ -182,15 +165,13 @@
         width: 25px;
     }
 }
-
 .burger-login-button {
     margin-left: 5px;
 }
-
 #close-menu-button {
     align-self: flex-end;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     background-color: transparent;
     border: none;
     background-image: url('/assets/images/close-menu-img.png');
@@ -231,5 +212,13 @@
     }
     #burger-menu-button {
         display: block;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    #small-nav-list {
+        li, a {
+            font-size: 6vw;
+        }
     }
 }
