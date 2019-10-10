@@ -11,7 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import {ProductFullDescritionComponent} from './components/product-full-descrition/product-full-descrition.component';
 import {BasketComponent} from './components/basket/basket.component';
 import { OrdersComponent } from './components/orders/orders.component';
-import { AdminGuard } from './admin.guard';
+// import { AdminGuard } from './admin.guard';
 
 
 
@@ -23,9 +23,9 @@ const routes: Routes = [
   {path: 'feed', loadChildren: './components/feed/feed.module#FeedModule'},
   {path: 'ammo', loadChildren: './components/ammo/ammo.module#AmmoModule'},
   {path: 'children', loadChildren: './components/our-children/our-children.module#OurChildrenModule'},  
-  {path: 'full-info/:id', component: ProductFullDescritionComponent},
-  {path: 'basket', component: BasketComponent},
-  {path: 'orders', component: OrdersComponent, canActivate: [AdminGuard]}
+  {path: 'full-info/:id', loadChildren: './components/product-full-descrition/product-full-descrition.module#ProductFullDescritionModule'},
+  {path: 'basket', loadChildren: './components/basket/basket.module#BasketModule'},
+  {path: 'orders', loadChildren: './components/orders/orders.module#OrdersModule'}
 ];
 
 

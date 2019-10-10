@@ -22,9 +22,9 @@ import { environment } from '../environments/environment';
 import { NavigationComponent } from './components/navigation/navigation.component';
 // import { AdminAddEditProductsComponent } from './components/admin-add-edit-products/admin-add-edit-products.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
-import { ProductFullDescritionComponent } from './components/product-full-descrition/product-full-descrition.component';
-import { BasketComponent } from './components/basket/basket.component';
-import { OrdersComponent } from './components/orders/orders.component';
+// import { ProductFullDescritionComponent } from './components/product-full-descrition/product-full-descrition.component';
+// import { BasketComponent } from './components/basket/basket.component';
+// import { OrdersComponent } from './components/orders/orders.component';
 // import { SearchComponent } from './components/search/search.component';
 // import { AmmoComponent } from './components/ammo/ammo.component';
 // import { OurChildrenComponent } from './components/our-children/our-children.component';
@@ -41,9 +41,9 @@ import { OrdersComponent } from './components/orders/orders.component';
     NavigationComponent,
     // AdminAddEditProductsComponent,
     LoginFormComponent,
-    ProductFullDescritionComponent,
-    BasketComponent,
-    OrdersComponent,
+    // ProductFullDescritionComponent,
+    // BasketComponent,
+    // OrdersComponent,
     // SearchComponent,
     // AmmoComponent,
     // OurChildrenComponent,
