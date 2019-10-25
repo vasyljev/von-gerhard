@@ -18,13 +18,24 @@
     <li *ngIf="getLoginState()"><a routerLink="/orders" routerLinkActive="active">Замовлення</a></li>
     <li><button [ngStyle]="{'background-image': buttonImage}" class="login-button" (click)="loginOrSignOut()"></button></li>
   </ul>
-  <div id="burger-menu-button" (click)="showHideMenu()">
-    <img src="assets/images/menu.png" alt="Menu button">
-  </div>  
+  <!-- <div id="burger-menu-button" (click)="showHideMenu()">
+    <div id="top-burger"></div>
+    <div id="middle-burger"></div>
+    <div id="bottom-burger"></div>
+  </div>   -->
+  <input type="checkbox" (click)="showHideMenu()" id="burger-checkbox">
+  <label id="burger-menu-button" for="burger-checkbox">      
+      <span id="top-burger"></span>
+      <span id="middle-burger"></span>
+      <span id="bottom-burger"></span>
+  </label>
 </nav>
 <nav id="nav-burger">    
     <ul id="small-nav-list" class="hide-nav" [ngClass]="{'show-nav': menuVisabilityValue}">
-        <button id="close-menu-button" (click)="showHideMenu()"></button>
+        <li id="close-menu-button" (click)="showHideMenu()">
+          <span class="close-button-line" id="first-close-line"></span>
+          <span class="close-button-line" id="second-close-line"></span>
+        </li>
         <li (click)="showHideMenu()"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Головна</a></li>
         <li (click)="showHideMenu()"><a routerLink="/meds" routerLinkActive="active">Ветпрепарати</a></li>
         <li (click)="showHideMenu()"><a routerLink="/feed" routerLinkActive="active">Корм</a></li>

@@ -5,16 +5,19 @@ import { HomeComponent } from './components/home/home.component';
 // import { FeedComponent } from './components/feed/feed.component';
 // import { MedsComponent } from './components/meds/meds.component';
 // import { AmmoComponent } from './components/ammo/ammo.component';
-// import { OurChildrenComponent } from './components/our-children/our-children.component';
-// import { AdultChildrenComponent } from './components/adult-children/adult-children.component';
-// import { SmallChildrenComponent } from './components/small-children/small-children.component';
-import {ProductFullDescritionComponent} from './components/product-full-descrition/product-full-descrition.component';
+import { OurChildrenComponent } from './components/our-children/our-children.component';
+import { AdultChildrenComponent } from './components/adult-children/adult-children.component';
+import { SmallChildrenComponent } from './components/small-children/small-children.component';
+// import {ProductFullDescritionComponent} from './components/product-full-descrition/product-full-descrition.component';
 import {BasketComponent} from './components/basket/basket.component';
-import { OrdersComponent } from './components/orders/orders.component';
+// import { OrdersComponent } from './components/orders/orders.component';
 // import { AdminGuard } from './admin.guard';
 
 
-
+const childrenRoutes: Routes =[
+  {path: 'adult', component: AdultChildrenComponent},
+  {path: 'puppies', component: SmallChildrenComponent}
+];
 
 
 const routes: Routes = [
@@ -22,16 +25,17 @@ const routes: Routes = [
   {path: 'meds', loadChildren: './components/meds/meds.module#MedsModule'},
   {path: 'feed', loadChildren: './components/feed/feed.module#FeedModule'},
   {path: 'ammo', loadChildren: './components/ammo/ammo.module#AmmoModule'},
-  {path: 'children', loadChildren: './components/our-children/our-children.module#OurChildrenModule'},  
+  {path: 'children',component: OurChildrenComponent, children: childrenRoutes},
+  // {path: 'children', loadChildren: './components/our-children/our-children.module#OurChildrenModule'},  
   {path: 'full-info/:id', loadChildren: './components/product-full-descrition/product-full-descrition.module#ProductFullDescritionModule'},
-  {path: 'basket', loadChildren: './components/basket/basket.module#BasketModule'},
+  {path: 'basket', component: BasketComponent},
   {path: 'orders', loadChildren: './components/orders/orders.module#OrdersModule'}
 ];
 
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true, preloadingStrategy: PreloadAllModules })],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

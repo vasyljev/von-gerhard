@@ -23,13 +23,13 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 // import { AdminAddEditProductsComponent } from './components/admin-add-edit-products/admin-add-edit-products.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 // import { ProductFullDescritionComponent } from './components/product-full-descrition/product-full-descrition.component';
-// import { BasketComponent } from './components/basket/basket.component';
+import { BasketComponent } from './components/basket/basket.component';
 // import { OrdersComponent } from './components/orders/orders.component';
 // import { SearchComponent } from './components/search/search.component';
 // import { AmmoComponent } from './components/ammo/ammo.component';
-// import { OurChildrenComponent } from './components/our-children/our-children.component';
-// import { AdultChildrenComponent } from './components/adult-children/adult-children.component';
-// import { SmallChildrenComponent } from './components/small-children/small-children.component';
+import { OurChildrenComponent } from './components/our-children/our-children.component';
+import { AdultChildrenComponent } from './components/adult-children/adult-children.component';
+import { SmallChildrenComponent } from './components/small-children/small-children.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +42,13 @@ import { LoginFormComponent } from './components/login-form/login-form.component
     // AdminAddEditProductsComponent,
     LoginFormComponent,
     // ProductFullDescritionComponent,
-    // BasketComponent,
+    BasketComponent,
     // OrdersComponent,
     // SearchComponent,
     // AmmoComponent,
-    // OurChildrenComponent,
-    // AdultChildrenComponent,
-    // SmallChildrenComponent
+    OurChildrenComponent,
+    AdultChildrenComponent,
+    SmallChildrenComponent
   ],
   imports: [
     BrowserModule,

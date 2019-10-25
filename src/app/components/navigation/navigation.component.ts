@@ -77,8 +77,25 @@ export class NavigationComponent implements OnInit, DoCheck {
   }
 
   showHideMenu() {
+   let burgerCheckbox = document.getElementById('burger-checkbox') as HTMLInputElement;
     this.menuVisabilityValue = !this.menuVisabilityValue;
+    if(!this.menuVisabilityValue) {
+      burgerCheckbox.checked = false;
+    }
+    console.log('this.menuVisabilityValue', this.menuVisabilityValue);
+    this.menuCloseButoonAnimation(this.menuVisabilityValue);
   }
   
+  menuCloseButoonAnimation(menuVisabilityValue: boolean) {
+    let buttonFirstLine = document.getElementById('first-close-line');
+    let buttonSecondLine = document.getElementById('second-close-line');
+    if(menuVisabilityValue) {
+      buttonFirstLine.classList.add('fade-in-first-close-line');
+      buttonSecondLine.classList.add('fade-in-second-close-line');
+    } else {
+      buttonFirstLine.classList.remove('fade-in-first-close-line');
+      buttonSecondLine.classList.remove('fade-in-second-close-line');
+    }
+  }
 
 }

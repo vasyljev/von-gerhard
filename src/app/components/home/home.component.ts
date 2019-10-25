@@ -5,7 +5,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   constructor() { }
 
@@ -41,14 +41,11 @@ export class HomeComponent implements OnInit {
       setTimeout(() => {
         this.changeVisabilityOfSlides(this.slideShowValue);
       }, 18000);
-    } else {
-      
-    }
-      
+    }       
   }
 
   navScrollFunction() {
-    let V = 0.9; 
+    let V = 0.7; 
     let w = window.pageYOffset;  
     let t = document.getElementById('vet-home-products').getBoundingClientRect().top,  
         start = null;
@@ -74,7 +71,7 @@ export class HomeComponent implements OnInit {
   
   productsAnimation() {
     document.addEventListener('scroll', () => {
-      let time = 5;
+      let time = 2;
       const productBlocks = document.getElementsByClassName('vet-home-product-item');
       for(let i = 0; i < productBlocks.length; i++) {
         let product = productBlocks[i];
@@ -83,7 +80,7 @@ export class HomeComponent implements OnInit {
             product.classList.remove('pre-anim-hide');
             product.classList.add('after-anim-show');
           }, time * 100);
-          time = time + 2;
+          time = time + 3;
         }
         
       }

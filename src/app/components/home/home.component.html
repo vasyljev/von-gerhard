@@ -8,7 +8,7 @@
     <h1>Von GerHard</h1>
     <h2>Тільки найкращі товари для Ваших улюбленців!</h2>
   </div>
-  <img id="vet-home-mouse" src="assets/images/mouse_icon.svg" alt="Mouse icon">  
+  <img id="vet-home-mouse" src="assets/images/mouse_icon.svg" alt="Mouse icon" (click)="navScrollFunction()">  
 </header>
 <section id="vet-home-products">
   <div class="vet-home-products-h">
@@ -38,9 +38,10 @@
   <p class="about-us-text">Домашні тварини знаходяться поруч з людиною напротязі багатьох тисячолітть. Наука вже давно довела, що тварини зміцнюють наше психічне та фізичне здоров’я,  знижують рівень стресу, дарують радісні емоції. Вони в буквальному сенсі можуть продовжити життя свого господаря.</p>
   <p class="about-us-text">Кожен люблячий свого вихованця турботливий господар прагне забезпечити тварину всім необхідним для комфортного проживання та здорового розвитку.</p>
   <p class="about-us-text">На сьогодні різноманіття товарів для догляду за домашніми улюбленцями вражає. На основі власного баготорічного досвіду у нашому магазині ми підібрали найкращі перевірені товари для Ваших друзів. Пропонуємо Вам широкий ассортимент кормів, вітамінів, добавок, засобів для догляду та аксесуарів для тварин.</p>
+  <p class="about-us-text">Von GerHard - це якісні ветпрепарати, корми та амуніція для Ваших котів та собак по вигідним цінам. Якщо Ви у пошуках домашнього улюбленця - ми Вам також допоможемо. У нас Ви можете придбати надзвичайно гарних цуценят!</p>
   <div class="about-us-info-block"> 
     <ul class="about-us-list about-us-half">
-      <h3 >Наші принципи:</h3>
+      <li id="first-list-element"><h3 >Наші принципи:</h3></li>
       <li>висока якість . Всі товари сертифіковані, зроблені з високоякісних продуктів та матеріалів напряму від виробників та офіційних дистрибюторів;</li>
       <li>оптимальні ціни та швидка доставка;</li>
       <li>комплексний підхід для догляду за тваринами;</li>
@@ -52,13 +53,13 @@
       <p>Телефон: +38 (067) 175 97 66</p>
       <p>E-mail: von-gerhard@meta.ua</p>
       <div class="social-icons-block">
-        <a href="https://www.facebook.com/Vitaliy-VON-Gerhard-1956182394392279/" target="_blank"><img src="assets/images/facebook_icon.png" alt="facebook"></a>
-        <a href="https://www.instagram.com/vitaliy_vongerhard/" target="_blank"><img src="assets/images/instagram_icon.png" alt="instagram"></a>
+        <a rel="noreferrer" href="https://www.facebook.com/Vitaliy-VON-Gerhard-1956182394392279/" target="_blank"><img src="assets/images/facebook_icon.png" alt="facebook"></a>
+        <a rel="noreferrer" href="https://www.instagram.com/vitaliy_vongerhard/" target="_blank"><img src="assets/images/instagram_icon.png" alt="instagram"></a>
       </div>
     </div>
   </div>
   <p class="about-us-text">Крім того, ми потурбувались щоб Вам було максимально зручно обирати товари з нашою зручною навігаційною панеллю. Всі товари поділені на категорії, які відповідають конкретному виду.</p>
-  <h3>Дякуємо за Ваш вибір!</h3>
+  <h3 id="thank-you-header">Дякуємо за Ваш вибір!</h3>
   <a class="about-us-to-products-btn" (click)="navScrollFunction()">
     Обрати продукт
   </a>
